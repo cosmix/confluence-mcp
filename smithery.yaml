@@ -1,0 +1,38 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - confluenceApiToken
+      - confluenceBaseUrl
+      - confluenceUserEmail
+    properties:
+      confluenceApiToken:
+        type: string
+        description: Confluence API Token for authentication
+      confluenceBaseUrl:
+        type: string
+        description: Base URL for the Confluence instance (e.g.,
+          https://your-domain.atlassian.net/wiki)
+      confluenceUserEmail:
+        type: string
+        description: User email for Confluence authentication
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'bun',
+      args: ['dist/index.js'],
+      env: {
+        CONFLUENCE_API_TOKEN: config.confluenceApiToken,
+        CONFLUENCE_BASE_URL: config.confluenceBaseUrl,
+        CONFLUENCE_USER_EMAIL: config.confluenceUserEmail
+      }
+    })
+  exampleConfig:
+    confluenceApiToken: dummy_api_token_123
+    confluenceBaseUrl: https://your-domain.atlassian.net/wiki
+    confluenceUserEmail: user@example.com
