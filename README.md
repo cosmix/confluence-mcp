@@ -1,5 +1,7 @@
 # Confluence MCP
 
+[![smithery badge](https://smithery.ai/badge/@cosmix/confluence-mcp)](https://smithery.ai/server/@cosmix/confluence-mcp)
+
 A Model Context Protocol (MCP) server for Confluence, enabling AI assistants to interact with Confluence content through a standardized interface.
 
 ℹ️ There is a separate MCP server [for Jira](https://github.com/cosmix/jira-mcp)
@@ -22,6 +24,15 @@ A Model Context Protocol (MCP) server for Confluence, enabling AI assistants to 
 
 ## Installation
 
+### Installing via Smithery
+
+To install Confluence MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cosmix/confluence-mcp):
+
+```bash
+npx -y @smithery/cli install @cosmix/confluence-mcp --client claude
+```
+
+### Manual Installation
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/confluence-mcp.git
