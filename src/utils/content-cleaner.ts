@@ -1,3 +1,5 @@
+import sanitizeHtml from 'sanitize-html';
+
 /**
  * Utilities for cleaning and transforming Confluence content
  */
@@ -77,7 +79,7 @@ export function storageFormatToMarkdown(storageFormat: string): string {
   markdown = markdown.replace(/<li[^>]*>(.*?)<\/li>/g, '- $1\n');
 
   // Remove remaining HTML tags
-  markdown = markdown.replace(/<[^>]*>/g, '');
+  markdown = sanitizeHtml(markdown, { allowedTags: [], allowedAttributes: {} });
 
   // Fix spacing
   markdown = markdown.replace(/\n\s*\n/g, '\n\n');
