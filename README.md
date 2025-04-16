@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server for Confluence, enabling AI assistants to interact with Confluence content through a standardized interface.
 
+<a href="https://glama.ai/mcp/servers/@cosmix/confluence-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@cosmix/confluence-mcp/badge" alt="Confluence MCP server" />
+</a>
+
 ℹ️ There is a separate MCP server [for Jira](https://github.com/cosmix/jira-mcp)
 
 ## Features
